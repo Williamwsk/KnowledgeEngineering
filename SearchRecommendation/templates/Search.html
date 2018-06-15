@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>云知</title>
+</head>
+<body style="background-color: #fafafa;">
+{% load staticfiles %}
+<div style=" width: 220%; height: 200px; margin-top: 100px; margin-left: 400px;
+    float: left">
+
+ <img src="/static/base.png">
+
+</div>
+
+<form method="post" action="/click_search/">
+    <div style="background-color: #fafafa; width: 100%; height: 150px; margin-top: -10px; margin-left: 250px;
+    float: left">
+        <input type="search" style="width: 37%; height: 35%;
+        margin-left: 10%; margin-top: 20px; float: left" name="search_txt">
+        <input type="submit" style="background-color: #3385ff; width: 6%; height: 35%;
+        margin-top: 20px; float: left; border-width: 0 0 0 0; color: #fff;
+        font-size: medium" value="搜   索">
+    </div>
+</form>
+</body>
+</html>
