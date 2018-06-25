@@ -6,6 +6,7 @@
 </head>
 <body style="background-color: #fafafa;">
 {% load staticfiles %}
+
 <div style=" width: 220%; height: 200px; margin-top: 100px; margin-left: 400px;
     float: left">
 
@@ -14,14 +15,29 @@
 </div>
 
 <form method="post" action="/click_search/">
-    <div style="background-color: #fafafa; width: 100%; height: 150px; margin-top: -10px; margin-left: 250px;
+    <table cellspacing="0"cellpadding="0" style="background-color: #fafafa; width: 100%; height: 150px; margin-top: -10px; margin-left: 220px;
     float: left">
-        <input type="search" style="width: 37%; height: 35%;
-        margin-left: 10%; margin-top: 20px; float: left" name="search_txt">
-        <input type="submit" style="background-color: #3385ff; width: 6%; height: 35%;
+
+        <tr>
+            <td align="right">
+
+                <select name="list_type" style=" margin-top:20px;height: 35%;">
+                    <option name="movie">电影</option>
+                    <option name="book">图书</option>
+                    <option name="game">游戏</option>
+                </select>
+
+            </td>
+            <td style="align-content: left">
+                <input type="search" style="width: 37%; height: 35%;
+        margin-left: 0%; margin-top: 20px; float: left" name="search_txt">
+                <input type="submit" style="background-color: #3385ff; width: 6%; height: 35%;
         margin-top: 20px; float: left; border-width: 0 0 0 0; color: #fff;
         font-size: medium" value="搜   索">
-    </div>
+
+            </td>
+        </tr>
+    </table>
 </form>
 </body>
 </html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>云知</title>
+    <style type="text/css">
+        a:link {color:green; text-decoration: none;}
+        a:visited {color:blue; text-decoration: none;}
+        a:hover  {color:blue; text-decoration:underline;}
+        a:active {color:green; text-decoration:blink;}
+        .div2 {width: 76%; height: fit-content; margin-left: 12%; float: left;}
+        img{
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body style="background-color: #fafafa;">
+<form method="post" action="/click_search/">
+     <table cellspacing="0"cellpadding="0" style="background-color: #fafafa; width: 100%; height: 150px; margin-top: -10px; margin-left: 220px;
+    float: left">
+
+        <tr>
+            <td align="right">
+
+                <select style=" margin-top:20px;height: 35%;">
+                    <option name="movie">电影</option>
+                    <option name="book">图书</option>
+                    <option name="game">游戏</option>
+                </select>
+
+            </td>
+            <td style="align-content: left">
+                <input type="search" style="width: 37%; height: 35%;
+        margin-left: 0%; margin-top: 20px; float: left" name="search_txt">
+                <input type="submit" style="background-color: #3385ff; width: 6%; height: 35%;
+        margin-top: 20px; float: left; border-width: 0 0 0 0; color: #fff;
+        font-size: medium" value="搜   索">
+
+            </td>
+        </tr>
+    </table>
+    <div class="div2">
+        {% for item in searchtxt %}
+            <p>
+                <a href="{{ item.url }}">
+                            <h3 style="font-size: 15pt">{{ item.label }}</h3>
+                        </a>
+                 <img style="width: 28%; height: 100px; float: left; text-align: center;" src="{{ item.picture }}">
+            </p><br>
+            <p>
+                <p><b>摘要：</b>{{ item.abstract }}</p>
+
+            </p>
+             <p>
+                <b>导演：</b>{{ item.director }}
+
+             </p>
+            <p>
+                <b>主演：</b>{{ item.staring }}
+
+            </p>
+             <p>
+                 <b>类型：</b>{{ item.style }}
+
+             </p>
+            <hr/>
+        {% endfor %}
+    </div>
+    <div class="div2">
+        <h3>您可能还对以下电影感兴趣：</h3>
+        {% for item in searchtxt %}
+            <p>
+
+                <span>
+
+                    <a href="http://en.wikipedia.org/wiki/{{ item.film_url }}">
+                   {% comment %} <a href="{{ item.film_url }}">{% endcomment %}
+                        <h3 style="font-size: 15pt">{{ item.film_name }}</h3>
+                    </a>
+
+
+                </span>
+
+
+            </p>
+
+
+
+
+        {% endfor %}
+    </div>
+</form>
+</body>
+</html>

@@ -70,7 +70,7 @@ def get_data(html_text):
                 propertyname = str(dt[index].string)
                 print(propertyname)
                 content = get_contentbyindex(index, dd)
-                if propertyname == "编    剧" or propertyname == "作    者":
+                if propertyname == "编    剧" or propertyname == "作    者" or propertyname =="设 计 者":
                     item["writer"] = content
                 elif dt[index].string == "主    演":
                     item["staring"] = content
